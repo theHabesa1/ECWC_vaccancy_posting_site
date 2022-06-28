@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteRule ^home?$ index.php
+ReWriteRule ^about?$ about.php
+RewriteRule ^post/([0-9]+) post.php?p=$1
+ReWriteRule ^teams?$ teams.php
+ReWriteRule ^([a-zA-Z1-9]+)$ index.php?post=$1
