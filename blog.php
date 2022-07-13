@@ -31,21 +31,44 @@ else
                 <br><br><br><br> <br> <br><br>
             </div>
        <?php
+            
+            
             require_once('include/footer.php');
             exit();
             }
+            $username = "root"; 
+            $password = ""; 
+            $database = "blog"; 
+            $mysqli = new mysqli("localhost", $username, $password, $database); 
+            $query = "SELECT * FROM posts";
+
+if(isset($_GET['post'])){
+    require_once('blog.php');
+}
+$mFunction = new Functions;
+$posts = $mFunction->getPosts();
+            $query = "SELECT * FROM posts";
+            if ($result = $mysqli->query($query)) {
+                while ($row = $result->fetch_assoc()) {
+                    $endDate = $row["endDate"];
+                    $num = $row["num"];
             $postCard = <<<HERE
                 <div class="card z-depth-0">
                     <img src="uploads/$post->postImage" alt="" style=" width:100%; object-fit:cover;" class="responsive-img" >
                     <p style="font-size: 18px; padding:20px">$post->postContent</p>
+                    <p style="font-size: 18px; padding:20px">"End Date" $endDate</p>
+                    <p style="font-size: 18px; padding:20px">"Number Required" $num</p>
                 </div> 
             HERE;;
+        }
+    }
         ?>
         <!-- container tag starting form here -->
         <div class="container">
             <div class="center-align">
                 <h3 style="font-weight: bold;"><?php echo $post->postTitle; ?></h3>
                 <p class="grey-text"><?php echo $post->postTimestamp; ?></p>
+
                 <!-- starting chip / tag section from here -->
                 <div class="chip">
                     Popular

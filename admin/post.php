@@ -14,7 +14,10 @@ if(isset($_POST['post'])){
     $postTitle = $_POST['postTitle'];
     $postContent = $_POST['postContent'];
     $postImage = $_FILES['postImage'];
-    $result = $func->postPost($postTitle,$postContent,$postImage);
+    $endDate = $_POST['endDate'];
+    $no = $_POST['num'];
+
+    $result = $func->postPost($postTitle,$postContent,$postImage,$endDate,$no);
     if ($result)
     {
         $_SESSION['posted'] = "Your Post Has Been Published";
@@ -33,7 +36,9 @@ if(isset($_POST['update'])){
     $postContent = $_POST['postContent'];
     $postImage = $_FILES['postImage'];
     $postId = $_POST['postId'];
-    $result = $func->updatePost($postTitle,$postContent,$postImage,$postId);
+    $endDate = $_POST['endDate'];
+    $no = $_POST['num'];
+    $result = $func->updatePost($postTitle,$postContent,$postImage,$postId,$endDate,$no);
 
     if($result){
         $_SESSION['updated'] = "Your Post Has Been Updated";
@@ -99,6 +104,17 @@ if(isset($_POST['update'])){
             <div class="input-field">
               <textarea id="" cols="30" rows="10" name="postContent" class="materialize-textarea" placeholder="Enter Your Post's Contents.." style="height: 300px; "><?php if(isset($_GET['edit'])){ echo $mFeeds->postContent; }?></textarea>
             </div>
+            <!--**********end date*********** -->
+            <div class ="input-field">
+                <label for="start">End Date:</label>
+                <input type="date" name="endDate" id="endDate" value="<?php if(isset($_GET['edit'])){ echo $mFeeds->endDate; }?>">
+            </div>
+
+            <!--**********number of employee*********** -->
+            <div class ="input-field">
+                <label for="start">Number of Employee:</label>
+                <input type="number" name="num" id="num" value="<?php if(isset($_GET['edit'])){ echo $mFeeds->num; }?>">
+            
             <div class="input-field">
                 <input id="postImage" type="file" onchange="readURL(this);" name="postImage" class="hide"/>
                 <img src="" class="hoverable"  alt="" id="image" style="width:100px;"> 

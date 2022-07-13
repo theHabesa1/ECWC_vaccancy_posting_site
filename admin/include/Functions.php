@@ -1,7 +1,5 @@
 <?php
-	/**
-	 * Social Codia
-	 */
+	
 	session_start();
 	class Functions
 	{
@@ -21,7 +19,7 @@
 			$query = "SELECT * FROM posts ORDER BY postTimestamp desc";
 			$stmt = $this->con->prepare($query);
 			$stmt->execute();
-			$stmt->bind_result($postId,$postTitle,$postContent,$postImage,$postTimestamp);
+			$stmt->bind_result($postId,$postTitle,$postContent,$postImage,$postTimestamp,$endDate,$no);
 			while ($stmt->fetch()) 
 			{
 				$posts['postId'] =			$postId;
@@ -29,6 +27,8 @@
 				$posts['postContent'] =		$postContent;
 				$posts['postImage'] =		$postImage;
 				$posts['postTimestamp']	=	$postTimestamp;
+				$post['endDate'] =			$endDate;
+				$post['num'] =				$no;
 				array_push($postsData, $posts);
 			}
 			$postsData = json_encode($postsData);
@@ -133,13 +133,15 @@
 			$stmt = $this->con->prepare($query);
 			$stmt->bind_param("s",$postId);
 			$stmt->execute();
-			$stmt->bind_result($postId,$postTitle,$postContent,$postImage,$postTimestamp);
+			$stmt->bind_result($postId,$postTitle,$postContent,$postImage,$postTimestamp,$endDate,$no);
 			$stmt->fetch();
 			$posts['postId'] =			$postId;
 			$posts['postTitle'] =		$postTitle;
 			$posts['postContent'] =		$postContent;
 			$posts['postImage'] =		$postImage;
 			$posts['postTimestamp']	=	$postTimestamp;
+			$post['endDate'] =			$endDate;
+			$post['num'] =				$no;
 			$result = json_encode($posts);
 			$result = json_decode($result);
 			return $result;
@@ -152,19 +154,21 @@
 			$stmt = $this->con->prepare($query);
 			$stmt->bind_param("s",$postTitle);
 			$stmt->execute();
-			$stmt->bind_result($postId,$postTitle,$postContent,$postImage,$postTimestamp);
+			$stmt->bind_result($postId,$postTitle,$postContent,$postImage,$postTimestamp,$endDate,$no);
 			$stmt->fetch();
 			$posts['postId'] =			$postId;
 			$posts['postTitle'] =		$postTitle;
 			$posts['postContent'] =		$postContent;
 			$posts['postImage'] =		$postImage;
 			$posts['postTimestamp']	=	$postTimestamp;
+			$post['endDate'] =			$endDate;
+			$post['num'] =				$no;
 			$result = json_encode($posts);
 			$result = json_decode($result);
 			return $result;
 		}
 
-		function postPost($postTitle,$postContent,$postImage)
+		function postPost($postTitle,$postContent,$postImage,$endDate,$no)
 		{
 			$imageUrl = "";
 			if (!empty($postImage['name'])) 
@@ -175,9 +179,9 @@
 			{
 				$imageUrl = "";
 			}
-			$query = "INSERT INTO posts (postTitle,postContent,postImage) VALUES (?,?,?)";
+			$query = "INSERT INTO posts (postTitle,postContent,postImage,endDate,num) VALUES (?,?,?,?,?)";
 			$stmt = $this->con->prepare($query);
-			$stmt->bind_param("sss",$postTitle,$postContent,$imageUrl);
+			$stmt->bind_param("sssss",$postTitle,$postContent,$imageUrl,$endDate,$no);
 			if ($stmt->execute())
 			{
 				return true;
@@ -188,7 +192,7 @@
 			}
 		}
 
-		function updatePost($postTitle,$postContent,$postImage,$postId)
+		function updatePost($postTitle,$postContent,$postImage,$postId,$endDate,$no)
 		{
 			$imageUrl = "";
 			if (!empty($postImage['name'])) 
@@ -199,9 +203,9 @@
 			{
 				$imageUrl = "";
 			}
-			$query = "UPDATE posts SET postTitle=?, postContent=?, postImage=? WHERE postId=?";
+			$query = "UPDATE posts SET postTitle=?, postContent=?, postImage=?, endDate=?,num=? WHERE postId=?";
 			$stmt = $this->con->prepare($query);
-			$stmt->bind_param("ssss",$postTitle,$postContent,$imageUrl,$postId);
+			$stmt->bind_param("ssssss",$postTitle,$postContent,$imageUrl,$postId,$endDate,$no);
 			if ($stmt->execute())
 			{
 				return true;

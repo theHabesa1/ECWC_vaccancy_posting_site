@@ -43,7 +43,7 @@
                             <div class="col s12 m4">
                                 <div class="card hoverable small" style="height:400px">
                                     <div class="card-image">
-                                        <img src="uploads/$post->postImage" alt="" height="150" width="150">
+                                        <img src="uploads/$post->0" alt="" height="150" width="150">
                                         <a href="?post=$post->postTitle" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">chevron_right</i></a>
                                     </div>
                                     <div class="card-content">

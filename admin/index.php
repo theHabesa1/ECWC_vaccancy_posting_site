@@ -36,6 +36,7 @@
                                 <i class="material-icons prefix red-text">email</i>
                                 <input type="text" name="email" id="email">
                                 <label for="email">Email Address</label>
+                                
                             </div>
                             <div class="input-field">
                                 <i class="material-icons prefix red-text">lock</i>
@@ -43,7 +44,7 @@
                                 <label for="password">Password</label>
                             </div>
                             <div class="input-field">
-                                <input class="btn red" onClick="dashbord.php" style="border-radius: 20px;  width:100%; margin-top: 20px;" value="Login" type="submit" name="login" id="login" >
+                                <input class="btn red"  style="border-radius: 20px;  width:100%; margin-top: 20px;" value="Login" type="submit" name="login" id="login" >
                             </div>
                         </form>
                     </div>

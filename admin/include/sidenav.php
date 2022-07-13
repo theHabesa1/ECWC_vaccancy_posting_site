@@ -32,7 +32,7 @@
                 </a>
             </li>
             <div class="divider"></div>
-            <li><a href="logout"><i class="material-icons">logout</i>Logout</a></li>
-            <li><a href=""><i class="material-icons">call</i>Contact Us</a></li>
-            <li><a href="about"><i class="material-icons">info</i>About Us</a></li>
+            <li><a href="logout.php"><i class="material-icons">logout</i>Logout</a></li>
+            <li><a href=""><i class="material-icons">call</i>Contact yared</a></li>
+            <li><a href=""><i class="material-icons">info</i>About coder</a></li>
         </ul>
