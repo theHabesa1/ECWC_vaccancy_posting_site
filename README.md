@@ -1,52 +1,7 @@
-# PhpBlog
-A Blogs Site with admin panel, developed using .php
+# ECWC_vaccancy_posting_site
+this is a PHP built site to manage open vacancy posting on the companies official website . this was one of the projects i did by the time i was working there.
 
-
-<p align="center">
-    <img src="https://i.imgur.com/2tsQpNo.png">
-</p>
-<p align="center">
-    <img src="https://i.imgur.com/rBO56wq.png">
-</p>
-<p align="center">
-    <img src="https://i.imgur.com/JVCNlQH.png">
-</p>
-<p align="center">
-    <img src="https://i.imgur.com/DlNQKBH.png">
-</p>
-<p align="center">
-    <img src="https://i.imgur.com/ZvGhUOU.png">
-</p>
-<p align="center">
-    <img src="https://i.imgur.com/06pnD8J.png">
-</p>
-<p align="center">
-    <img src="https://i.imgur.com/aWYmJHy.png">
-</p>
-<p align="center">
-    <img src="https://i.imgur.com/Od4jYM3.png">
-</p>
-<p align="center">
-    <img src="https://i.imgur.com/7eETQub.png">
-</p>
-<p align="center">
-    <img src="https://i.imgur.com/20OtGRY.png">
-</p>
-
-## Mobile View
-
-<p align="center">
-    <img src="https://i.imgur.com/ZsgAA7n.png">
-    <img src="https://i.imgur.com/MqVUIXa.png">
-    <img src="https://i.imgur.com/KVh0Dvi.png">
-</p>
-    
-## Login Page
-<p align="center">
-    <img src="https://i.imgur.com/epPqo8d.png">
-</p>
-
-## Sidenav Desgin
-<p align="center">
-    <img src="https://i.imgur.com/Et5xhwM.png">
-</p>
+Features the website hold
+--> an admin panel to post the jobs, edit and delete them.
+--> user registration and login form to acces the postes
+--> jobs displayed as a card or as a table i would suggest you delete the table it was one of the reuiremnt while i was working there but you can delete it 
