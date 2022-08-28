@@ -84,7 +84,7 @@
 }
 
 .red {
-  background-color: #F44336 !important;
+  background-color: #25f825 !important;
 }
 
 .red-text {
@@ -132,27 +132,27 @@
 }
 
 .red.darken-1 {
-  background-color: #E53935 !important;
+  background-color: #16f53b !important;
 }
 
 .red-text.text-darken-1 {
-  color: #E53935 !important;
+  color: #31fa31 !important;
 }
 
 .red.darken-2 {
-  background-color: #D32F2F !important;
+  background-color: #20eb2a !important;
 }
 
 .red-text.text-darken-2 {
-  color: #D32F2F !important;
+  color: #25f825 !important;
 }
 
 .red.darken-3 {
-  background-color: #C62828 !important;
+  background-color: #25ec3f !important;
 }
 
 .red-text.text-darken-3 {
-  color: #C62828 !important;
+  color: #25f825 !important;
 }
 
 .red.darken-4 {
@@ -8486,10 +8486,19 @@ input[type=range]::-ms-thumb {
   visibility: visible;
   -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
           animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-  -webkit-transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
-  transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
-  transition: opacity .3s, transform .3s, visibility 0s 1s;
-  transition: opacity .3s, transform .3s, visibility 0s 1s, -webkit-transform .3s;
+  -webkit-transition: opacity .3s,
+ visibility 0s 1s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ visibility 0s 1s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s 1s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s 1s,
+ -webkit-transform .3s;
 }
 
 .tap-target {
@@ -8542,10 +8551,19 @@ input[type=range]::-ms-thumb {
 
 .tap-target-wave::after {
   visibility: hidden;
-  -webkit-transition: opacity .3s, visibility 0s, -webkit-transform .3s;
-  transition: opacity .3s, visibility 0s, -webkit-transform .3s;
-  transition: opacity .3s, transform .3s, visibility 0s;
-  transition: opacity .3s, transform .3s, visibility 0s, -webkit-transform .3s;
+  -webkit-transition: opacity .3s,
+ visibility 0s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ visibility 0s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s,
+ -webkit-transform .3s;
   z-index: -1;
 }
 

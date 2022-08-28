@@ -1,5 +1,5 @@
         <footer class="page-footer orange darken-2" style=" background-color: #17de09 !important;">
-            <div class="container">
+            <div class="container" >
                 <div class="row">
                     <div class="col l6 m6 s12">
                         <h5 style="font-weight: bold;">Visit our Offices' for more info</h5>

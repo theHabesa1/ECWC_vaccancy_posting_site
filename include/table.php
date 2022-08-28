@@ -1,5 +1,4 @@
-<html>
-<body>
+
 <style>
 table.customTable {
   width: 100%;
@@ -26,7 +25,7 @@ table.customTable thead {
   background-color: #6DF872;
 }
 </style>
-<?php require_once('include/header.php'); ?>
+
 <?php require_once('admin/include/dbcon.php'); ?>
 <?php 
 $username = "root"; 
@@ -51,7 +50,7 @@ echo '<table class="customTable" border="0" cellspacing="2" cellpadding="2">
           <td> <font face="Arial">Opened date</font> </td> 
           <td> <font face="Arial">End Date</font> </td> 
           <td> <font face="Arial">number required</font> </td> 
-          <td> <font face="Arial">    </font> </td> 
+         
       </tr>
 </thead>';
 
@@ -74,19 +73,11 @@ if ($result = $mysqli->query($query)) {
                   <td>'.$field2name.'</td> 
                   <td>'.$field3name.'</td> 
                   <td>'.$field4name.'</td>
-                  <td>'.$field5name.'</td> 
-                  <td> 
-                  
-                     <div class="card-action">
-                     <a href="http://localhost/PhpBlog-master/index.php?post=test" class="deep-orange-text">Read More</a>
-                     </div>
+                  <td>'.$field5name.'</td>
                  
-        
-                
-                 
-                  </td>
               </tr>';
-            }
+            
+          }
 
             
     }
@@ -97,6 +88,3 @@ if ($result = $mysqli->query($query)) {
     $result->free();
 
 ?>
-
-</body>
-</html>

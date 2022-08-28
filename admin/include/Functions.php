@@ -48,7 +48,7 @@
 			{
 				session_start();
 				$_SESSION['userId'] = $userId;
-				header("LOCATION:dashboard");
+				header("LOCATION:dashboard.php");
 			}
 			else
 			{
